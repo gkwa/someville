@@ -1,0 +1,3 @@
+package core
+
+const defaultImageURL = "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS71yfHYfcINhCdWC_V6hy6tSK-UqwHi2GbC1TKTXHRGsoJEuyC9rfjc11Nj6J2jIcqf07qnF6Lpp973qeWH8j5I2GCtHpd1rRBXegWkCIm4AcYDGGCAkEmfQ"
