@@ -28,6 +28,6 @@ func init() {
 
 	processCmd.Flags().StringVar(&basedir, "basedir", ".", "Base directory to scan for markdown files")
 	processCmd.Flags().StringSliceVar(&exts, "ext", []string{"md"}, "File extensions to process")
-	processCmd.Flags().StringSliceVar(&ignorePaths, "ignore-path", []string{".trash"}, "Directories to ignore (case-insensitive)")
+	processCmd.Flags().StringSliceVar(&ignorePaths, "ignore-path", []string{".git", ".trash"}, "Directories to ignore (case-insensitive)")
 	processCmd.Flags().StringVar(&fileType, "filetype", "recipe", "Filetype to process (specified in frontmatter)")
 }
