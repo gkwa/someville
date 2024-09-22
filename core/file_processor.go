@@ -1,6 +1,7 @@
 package core
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 
@@ -40,7 +41,6 @@ func (mfp *MarkdownFileProcessor) Process(filename, fileType string) error {
 		frontmatter = make(map[string]interface{})
 	}
 
-	// Check if the file has the correct filetype
 	if ft, ok := frontmatter["filetype"]; !ok || ft != fileType {
 		mfp.logger.V(1).Info("Skipping file with incorrect filetype", "file", filename, "filetype", ft)
 		return nil
@@ -60,10 +60,14 @@ func (mfp *MarkdownFileProcessor) Process(filename, fileType string) error {
 
 	updatedContent := mfp.fileWriter.UpdateContent(frontmatter, body)
 
-	if err := mfp.fileWriter.WriteFile(filename, updatedContent); err != nil {
-		return fmt.Errorf("error writing file: %w", err)
+	if !bytes.Equal(content, updatedContent) {
+		if err := mfp.fileWriter.WriteFile(filename, updatedContent); err != nil {
+			return fmt.Errorf("error writing file: %w", err)
+		}
+		mfp.logger.V(1).Info("File updated successfully", "file", filename)
+	} else {
+		mfp.logger.V(1).Info("File content unchanged, skipping write", "file", filename)
 	}
 
-	mfp.logger.V(1).Info("File processed successfully", "file", filename)
 	return nil
 }
