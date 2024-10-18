@@ -13,7 +13,7 @@ require (
 	github.com/rs/zerolog v1.33.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
-	github.com/yuin/goldmark v1.4.13
+	github.com/yuin/goldmark v1.7.8
 	github.com/yuin/goldmark-meta v1.1.0
 	go.uber.org/zap v1.27.0
 	gopkg.in/yaml.v3 v3.0.1
