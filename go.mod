@@ -2,7 +2,7 @@ module github.com/gkwa/someville
 
 go 1.24.0
 
-toolchain go1.24.11
+toolchain go1.25.5
 
 require (
 	github.com/fatih/color v1.18.0
