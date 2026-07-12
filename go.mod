@@ -17,6 +17,7 @@ require (
 	github.com/spf13/viper v1.21.0
 	github.com/yuin/goldmark v1.8.4
 	github.com/yuin/goldmark-meta v1.1.0
+	github.com/yuin/goldmark-meta/v2 v2.0.0
 	go.uber.org/zap v1.28.0
 	gopkg.in/yaml.v3 v3.0.1
 	sigs.k8s.io/controller-runtime v0.24.1
